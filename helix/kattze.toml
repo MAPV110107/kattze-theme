@@ -1,0 +1,54 @@
+"ui.background" = { bg = "#000000" }
+"ui.text" = { fg = "#ffffff" }
+"ui.text.focus" = { fg = "#ffffff", bg = "#000000", modifiers = ["reversed", "bold"] }
+"ui.text.inactive" = { fg = "#777777" }
+
+"ui.window" = { fg = "#ffffff" }
+"ui.popup" = { fg = "#ffffff", bg = "#000000" }
+"ui.help" = { fg = "#ffffff", bg = "#000000" }
+
+"ui.menu" = { fg = "#888888", bg = "#000000" }
+"ui.menu.selected" = { fg = "#ffffff", bg = "#000000", modifiers = ["reversed", "bold"] }
+"ui.menu.scroll" = { fg = "#ffffff", bg = "#333333" }
+"ui.virtual.inlay-hint" = { fg = "#666666" }
+"ui.virtual.whitespace" = { fg = "#444444" }
+
+"ui.statusline" = { fg = "#ffffff", bg = "#111111", modifiers = ["bold"] }
+"ui.statusline.inactive" = { fg = "#777777", bg = "#000000" }
+"ui.statusline.normal" = { fg = "#000000", bg = "#ffffff", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "#ffffff", bg = "#333333", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "#000000", bg = "#999999", modifiers = ["bold"] }
+
+"ui.linenr" = { fg = "#555555" }
+"ui.linenr.selected" = { fg = "#ffffff", modifiers = ["bold"] }
+"ui.cursorline.primary" = { bg = "#141414" }
+"ui.selection" = { bg = "#333333" }
+"ui.cursor" = { fg = "#000000", bg = "#cccccc" }
+"ui.cursor.primary" = {}
+"ui.cursor.match" = { fg = "#000000", bg = "#888888", modifiers = ["bold"] }
+
+"comment" = { fg = "#666666", modifiers = ["italic"] }
+"keyword" = { fg = "#ffffff", modifiers = ["bold"] }
+"function" = { fg = "#ffffff", modifiers = ["bold"] }
+"type" = { fg = "#dddddd", modifiers = ["bold"] }
+"string" = { fg = "#bbbbbb" }
+"constant" = { fg = "#cccccc", modifiers = ["bold"] }
+"variable" = { fg = "#eeeeee" }
+"operator" = { fg = "#ffffff" }
+"punctuation" = { fg = "#888888" }
+
+"error" = { fg = "#ffffff", modifiers = ["bold", "underlined"] }
+"warning" = { fg = "#bbbbbb", modifiers = ["underlined"] }
+"info" = { fg = "#888888" }
+"hint" = { fg = "#666666" }
+
+"diagnostic.error" = { bg = "#262626", underline = { color = "#ffffff", style = "curl" } }
+"diagnostic.warning" = { bg = "#1c1c1c", underline = { color = "#aaaaaa", style = "curl" } }
+"diagnostic.info" = { underline = { color = "#888888", style = "dotted" } }
+"diagnostic.hint" = { underline = { color = "#666666", style = "dotted" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+"ui.text.directory" = { modifiers = ["bold"] }
+"special" = { modifiers = ["bold", "underlined"] }
+"ui.bufferline" = { fg = "#777777", bg = "#000000" }
+"ui.bufferline.active" = { fg = "#ffffff", bg = "#000000", modifiers = ["reversed", "bold"] }

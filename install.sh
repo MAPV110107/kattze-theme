@@ -11,7 +11,7 @@ HELIX_THEMES_DIR="$HELIX_DIR/themes"
 TERMUX_PROPS="$TERMUX_DIR/termux.properties"
 HELIX_CONFIG="$HELIX_DIR/config.toml"
 
-command -v wget >/dev/null 2>&1 || pkg install -y wget
+command -v curl >/dev/null 2>&1 || pkg install -y curl
 
 SCRIPT_DIR=""
 if [ -n "${BASH_SOURCE[0]:-}" ] && [ -f "${BASH_SOURCE[0]}" ]; then
@@ -24,21 +24,21 @@ fetch_file() {
   if [ -n "$SCRIPT_DIR" ] && [ -f "$SCRIPT_DIR/$rel_path" ]; then
     cp "$SCRIPT_DIR/$rel_path" "$dest"
   else
-    wget -qO "$dest" "$REPO_RAW/$rel_path"
+    curl -fsSL "$REPO_RAW/$rel_path" -o "$dest"
   fi
 }
 
 install_font() {
   local tmp_font
   tmp_font="$(mktemp)"
-  if wget -qO "$tmp_font" "$FONT_RAW_URL" && [ -s "$tmp_font" ]; then
+  if curl -fsSL "$FONT_RAW_URL" -o "$tmp_font" && [ -s "$tmp_font" ]; then
     mv "$tmp_font" "$TERMUX_DIR/font.ttf"
   else
     rm -f "$tmp_font"
     local tmp_dir tmp_tar font_file
     tmp_dir="$(mktemp -d)"
     tmp_tar="$tmp_dir/JetBrainsMono.tar.xz"
-    wget -qO "$tmp_tar" "$FONT_RELEASE_URL"
+    curl -fsSL "$FONT_RELEASE_URL" -o "$tmp_tar"
     tar -xJf "$tmp_tar" -C "$tmp_dir"
     font_file="$(find "$tmp_dir" -type f -name 'JetBrainsMonoNerdFont-Regular.ttf' | head -n 1)"
     [ -n "$font_file" ] && cp "$font_file" "$TERMUX_DIR/font.ttf"
